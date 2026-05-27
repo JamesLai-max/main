@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="上尊爵AI">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="application-name" content="上尊爵AI">
+<link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="manifest" href="manifest.webmanifest">
+
+<title>上尊爵社區 AI 管理系統 v29</title>
+<style>
+*{box-sizing:border-box}:root{--bg:#f6f7fb;--card:#fff;--ink:#111827;--muted:#64748b;--line:#d8dee9;--brand:#0f172a;--soft:#eef2ff;--good:#16a34a;--warn:#d97706;--bad:#dc2626;--shadow:0 12px 30px rgba(15,23,42,.08)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,"Microsoft JhengHei",sans-serif}button,input,select,textarea{font:inherit}button{border:0;border-radius:14px;padding:12px 14px;background:var(--brand);color:#fff;font-weight:800;cursor:pointer}button.alt{background:#e2e8f0;color:#0f172a}button.good{background:var(--good)}button.warn{background:var(--warn)}button.bad{background:var(--bad)}
+.hero{background:linear-gradient(135deg,#0f172a,#1e293b);color:white;padding:18px 16px 20px;position:sticky;top:0;z-index:20;box-shadow:0 8px 22px rgba(15,23,42,.18)}.hero h1{font-size:22px;margin:4px 0}.hero p{font-size:13px;line-height:1.55;margin:0;opacity:.9}.badge{display:inline-block;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.12);padding:4px 10px;border-radius:999px;font-size:12px;margin-top:6px}
+.app{max-width:820px;margin:0 auto;padding:14px 14px 96px}.page{display:none}.page.active{display:block}.panel,.card,.item{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:14px;margin-bottom:12px}.title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 10px}.title h2{font-size:18px;margin:0}.muted,.hint{color:var(--muted);font-size:13px;line-height:1.5}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.kpi{background:#fff;border:1px solid var(--line);border-radius:18px;padding:12px;box-shadow:var(--shadow)}.kpi b{font-size:22px;display:block;margin-top:3px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.row{display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:10px}label{font-size:12px;color:var(--muted);font-weight:700}input,textarea,select{width:100%;border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff;color:var(--ink)}textarea{min-height:92px;resize:vertical}.searchbar{display:flex;gap:8px;align-items:center}.searchbar input{flex:1}.item{box-shadow:none;margin-bottom:8px}.item b{display:block;font-size:15px;margin-bottom:3px}.tag{display:inline-block;font-size:12px;padding:3px 8px;border-radius:999px;background:var(--soft);margin:2px;color:#334155}.bottom{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);z-index:30}.nav{max-width:820px;margin:0 auto;display:grid;grid-template-columns:repeat(8,1fr);gap:4px;padding:8px 8px calc(8px + env(safe-area-inset-bottom))}.nav button{padding:8px 2px;border-radius:12px;background:transparent;color:#475569;font-size:11px;font-weight:800}.nav button.active{background:#0f172a;color:white}.error{background:#fff1f2;border:1px solid #fecdd3;color:#991b1b;border-radius:16px;padding:10px;margin:10px 0;white-space:pre-wrap}.ok{background:#ecfdf5;border:1px solid #bbf7d0;color:#166534;border-radius:16px;padding:10px;margin:10px 0}.tableWrap{overflow:auto;border:1px solid var(--line);border-radius:14px}table{width:100%;border-collapse:collapse;background:white}th,td{border-bottom:1px solid var(--line);padding:9px;font-size:13px;text-align:left;vertical-align:top}th{background:#f8fafc;white-space:nowrap}.watermark{position:fixed;pointer-events:none;right:18px;bottom:86px;font-weight:900;color:#0f172a;opacity:.035;font-size:46px;transform:rotate(-12deg)}
+.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.formGrid .full{grid-column:1/-1}.miniBtn{padding:8px 10px;border-radius:12px;font-size:12px}.residentMeta{line-height:1.8}.emptyField{color:#94a3b8}
+.installBox{border:1px solid #c7d2fe;background:linear-gradient(180deg,#fff,#f8fafc)}.installState{font-size:13px;line-height:1.7;color:#334155;white-space:pre-wrap}.dot{display:inline-block;width:10px;height:10px;border-radius:999px;background:#16a34a;margin-right:6px}.dot.warn{background:#d97706}.dot.bad{background:#dc2626}.tiny{font-size:12px;color:#64748b;line-height:1.6}.copyBox{background:#0f172a;color:#e2e8f0;border-radius:14px;padding:10px;font-size:12px;line-height:1.5;white-space:pre-wrap;margin-top:8px}
+@media(max-width:520px){.formGrid{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.nav{grid-template-columns:repeat(4,1fr)}.hero h1{font-size:20px}.app{padding-left:10px;padding-right:10px}button{width:auto}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="badge" id="bootBadge">v29 主畫面修正版</div><h1>上尊爵社區 AI 管理系統</h1><p>手機優先、主畫面啟動修正、模糊查詢、資料接入、住戶/租客聯絡資訊、車位車號對接。</p></header>
+<div class="watermark">上尊爵社區</div>
+<main class="app">
+<div id="systemMsg" class="ok">系統畫面已載入。v29 已加入手機主畫面/PWA 安裝檢測與第二次開啟保底提示。</div>
+
+<div id="installStatus" class="installBox panel">
+  <div class="title"><h2>手機主畫面啟動狀態</h2><span class="tag">v29</span></div>
+  <div id="installStatusBody" class="installState">正在檢查手機開啟模式...</div>
+  <div class="actions">
+    <button id="btnInstallApp" class="good">安裝/加入主畫面</button>
+    <button id="btnInstallCheck" class="alt">重新檢查</button>
+    <button id="btnCopyInstallNote" class="alt">複製安裝提醒</button>
+  </div>
+  <div class="copyBox" id="installNote" style="display:none">建議正式使用方式：不要從 ChatGPT 預覽或一次性下載頁加入主畫面。請把 v29 放到固定網址 HTTPS，或至少把 HTML 存在手機「下載」資料夾後再用 Chrome/Edge/Safari 開啟並加入主畫面。</div>
+</div>
+<section id="home" class="page active"><div class="panel"><div class="title"><h2>首頁總覽</h2><span class="tag" id="versionTag">v29</span></div><div class="grid" id="kpis"><div class="kpi">啟動中<b>...</b></div></div><div class="actions"><button data-page="ai">AI 指令</button><button data-page="search" class="alt">全域查詢</button><button id="btnConnect" class="good">接資料進這版</button></div><p class="hint">測試查詢：55 8、5508、55號8樓、租客電話、3932-PK、楊順培、約暉、車道鐵門。</p></div><div class="panel"><div class="title"><h2>最近紀錄</h2></div><div id="recentLog" class="muted">尚無紀錄。</div></div></section>
+<section id="ai" class="page"><div class="panel"><div class="title"><h2>AI 指令中樞</h2></div><textarea id="aiText" placeholder="例：B1 車道鐵門異常，請約暉實業協助檢修"></textarea><div class="actions"><button id="btnAI" class="good">AI 判斷並建立紀錄</button><button id="btnChair" class="alt">產生主委回報</button></div><div id="aiResult" class="item muted">等待指令。</div></div></section>
+<section id="search" class="page"><div class="panel"><div class="title"><h2>全域模糊查詢</h2></div><div class="searchbar"><input id="globalQ" placeholder="查戶別、姓名、電話、車牌、卡號、廠商、財務"><button id="btnSearch">查詢</button></div><div class="actions"><button class="alt quickQ" data-q="55 8">55 8</button><button class="alt quickQ" data-q="5508">5508</button><button class="alt quickQ" data-q="3932-PK">3932-PK</button><button class="alt quickQ" data-q="約暉">約暉</button></div></div><div id="searchResults"></div></section>
+<section id="residents" class="page"><div class="panel"><div class="title"><h2>住戶資料</h2><button id="btnPrintResidents" class="alt">列印名冊</button></div><input id="residentQ" placeholder="篩選住戶、租客、電話、車牌、門禁卡"><p class="hint">查到住戶後可按「修正資料」，直接補租客姓名、租客電話、聯絡人、車牌、門禁卡與備註。</p><div id="residentList" style="margin-top:10px"></div></div><div id="residentEditor" class="panel" style="display:none"><div class="title"><h2>修正住戶資料</h2><span class="tag" id="residentEditTitle">未選取</span></div><input type="hidden" id="editResidentId"><div class="formGrid"><div><label>戶別</label><input id="editUnit" placeholder="例：55-08F"></div><div><label>戶別代碼</label><input id="editCode" placeholder="例：B2-8"></div><div><label>所有權人 / 住戶姓名</label><input id="editName"></div><div><label>主要電話</label><input id="editPhone"></div><div><label>手機 / 第二電話</label><input id="editMobile"></div><div><label>緊急聯絡人</label><input id="editEmergency"></div><div><label>租客姓名</label><input id="editTenantName" placeholder="無則留空"></div><div><label>租客電話</label><input id="editTenantPhone" placeholder="無則留空"></div><div class="full"><label>租客聯絡資訊 / 備註</label><textarea id="editTenantContact" placeholder="例：租客聯絡人、租約期間、代收包裹注意事項"></textarea></div><div><label>汽車車位</label><input id="editCarSpace"></div><div><label>汽車車牌，多筆用、分隔</label><input id="editCars"></div><div><label>機車位</label><input id="editMotorSpace"></div><div><label>機車車牌，多筆用、分隔</label><input id="editMotorPlates"></div><div class="full"><label>門禁卡 / 感應扣，多筆用、分隔</label><input id="editCards"></div><div class="full"><label>管理備註</label><textarea id="editNote"></textarea></div></div><div class="actions"><button id="btnSaveResident" class="good">儲存修正</button><button id="btnCancelResidentEdit" class="alt">取消</button></div><p class="hint">儲存後會寫入本機資料庫，並同步更新模糊查詢結果與備份資料。</p></div></section>
+<section id="vendors" class="page"><div class="panel"><div class="title"><h2>廠商資料</h2></div><input id="vendorQ" placeholder="查廠商、設備、電話"><div id="vendorList" style="margin-top:10px"></div></div></section>
+<section id="todo" class="page"><div class="panel"><div class="title"><h2>代辦指定</h2></div><input id="todoText" placeholder="代辦事項"><div class="row"><input id="todoAssignee" placeholder="指定對象，例如 管理中心 / 日班 / 晚班"><select id="todoPri"><option>一般</option><option>高</option><option>緊急</option></select></div><button id="btnTodo" class="good">新增代辦</button></div><div id="todoList"></div></section>
+<section id="finance" class="page"><div class="panel"><div class="title"><h2>財務資料</h2></div><p class="hint">目前接入管理費基礎欄位，可由 CSV / JSON 匯入完整財務資料。</p><div id="financeList"></div></div></section>
+<section id="backup" class="page"><div class="panel"><div class="title"><h2>資料備份 / 接入</h2></div><div class="actions"><button id="btnConnect2" class="good">接資料進這版</button><button id="btnExport">匯出 JSON</button><button id="btnExportCSV" class="alt">匯出 CSV</button><button id="btnHealth" class="alt">資料健檢/修復</button><button id="btnReset" class="bad">重設基礎資料</button></div><p class="hint">可貼上 JSON 或 CSV 文字。CSV 欄位建議：type, unit, code, name, phone, mobile, emergencyContact, tenantName, tenantPhone, tenantContact, carSpace, cars, motorSpace, motorPlates, cards, note。也可用中文欄名：戶別、車位、車號、汽車車位、汽車車牌、機車位、機車車牌。</p><textarea id="importText" placeholder="貼上 JSON 或 CSV 資料"></textarea><div class="actions"><button id="btnImport" class="warn">匯入貼上資料</button><label class="tag" style="cursor:pointer">選檔匯入<input id="fileImport" type="file" accept=".json,.csv,.txt" style="display:none"></label></div><div id="backupInfo" class="muted"></div></div></section>
+</main>
+<nav class="bottom"><div class="nav"><button data-page="home" class="active">首頁</button><button data-page="ai">AI</button><button data-page="search">查詢</button><button data-page="residents">住戶</button><button data-page="vendors">廠商</button><button data-page="todo">代辦</button><button data-page="finance">財務</button><button data-page="backup">備份</button></div></nav>
+<script>
+(function(){
+'use strict';
+var APP_VERSION = 'v29';
+var STORAGE_KEY = 'sj_ai_management_v29';
+var LEGACY_KEYS = ['sj_ai_management_v28','sj_ai_management_v27','sj_ai_management_v26','sj_ai_management_v25','sj_ai_management_v24','sj_ai_management_v23','sj_ai_management_v22','sj_ai_management_v21_1','sj_ai_management_v21','sj_ai_management_v20','SJ_AI_DB','shangzunjue_ai_db','shangzunjue_ai_mobile_vendor_home_v21_1_fix','shangzunjue_ai_mobile_vendor_home_v21','shangzunjue_ai_mobile_vendor_home_v20','shangzunjue_ai_mobile_vendor_home_v19','shangzunjue_ai_mobile_vendor_home_v18'];
+var SEED = {"residents": [{"unit": "55-02F", "code": "B2-2", "aliases": ["55-2", "55-02", "5502", "B2-2", "B22", "55號2樓"], "name": "張特軒", "phone": "0919-266-799", "mobile": "", "emergencyContact": "(母)張素惠", "carSpace": "", "cars": [], "motorSpace": "", "motorPlates": [], "cards": [], "note": "接入基礎資料", "fees": []}, {"unit": "55-08F", "code": "B2-8", "aliases": ["55-8", "55-08", "5508", "B2-8", "B28", "55號8樓"], "name": "林嘉宏", "phone": "0933-870-858", "mobile": "0936-111-421", "emergencyContact": "(妻子)黃亦薇", "carSpace": "B2-36號", "cars": ["3932-PK"], "motorSpace": "B1-41、12號", "motorPlates": [], "cards": ["1678462774"], "note": "接入基礎資料", "fees": [{"month": "115-05", "amount": 4640.8, "status": "待核對"}]}, {"unit": "55-12F", "code": "B2-12", "aliases": ["55-12", "5512", "B2-12", "B212", "55號12樓"], "name": "柯振欽", "phone": "0988-247-977", "mobile": "0928-218-605", "emergencyContact": "(姊姊)柯麗香", "carSpace": "B3-02號", "cars": [], "motorSpace": "B1-47號", "motorPlates": [], "cards": ["1255552405", "1678508390", "1678510470", "1678443030", "2594157781", "1454036821", "1515252949"], "note": "接入基礎資料", "fees": [{"month": "115-05", "amount": 4940.8, "status": "待核對"}]}, {"unit": "61-07F", "code": "A2-7", "aliases": ["61-7", "61-07", "6107", "A2-7", "A27", "61號7樓"], "name": "楊順培", "phone": "0932-221-565", "mobile": "0917-868-022\n0961-221-565", "emergencyContact": "(妻)莊書語\n(女)楊欣蓉", "carSpace": "B1-61號", "cars": ["AGM-5577"], "motorSpace": "B1-18號", "motorPlates": [], "cards": ["1678435238", "2901655342", "0187740785"], "note": "接入基礎資料", "fees": [{"month": "115-05", "amount": 5753.2, "status": "待核對"}]}, {"unit": "61-08F", "code": "A2-8", "aliases": ["61-8", "61-08", "6108", "A2-8", "A28", "61號8樓"], "name": "陳張素娥", "phone": "0931-355-961", "mobile": "0931-355-961\n0922-977-949", "emergencyContact": "(先生)陳阿生\n(女)陳麗玉", "carSpace": "B3-14號", "cars": ["1617-YL"], "motorSpace": "B1-17號", "motorPlates": ["617-MXN"], "cards": ["1678450006", "1678449286"], "note": "接入基礎資料", "fees": [{"month": "115-05", "amount": 5753.2, "status": "待核對"}]}, {"unit": "61-12F", "code": "A2-12", "aliases": ["61-12", "6112", "A2-12", "A212", "61號12樓"], "name": "簡恒敬", "phone": "0932-844-961", "mobile": "0932-844-961\n0932-017-483", "emergencyContact": "(母)楊玲卿\n(父)簡太郎", "carSpace": "B1-60號", "cars": ["AKP-8786"], "motorSpace": "B1-38號", "motorPlates": [], "cards": ["1819023331", "1678448422", "1678464838", "1678504374", "4341616739", "1333521589"], "note": "接入基礎資料", "fees": [{"month": "115-05", "amount": 5753.2, "status": "待核對"}]}, {"unit": "63-09F", "code": "A1-9", "aliases": ["63-9", "63-09", "6309", "A1-9", "A19", "63號9樓"], "name": "蘇彥杰", "phone": "0926-990-309", "mobile": "0939-626-468", "emergencyContact": "(妻)莊書妤", "carSpace": "", "cars": [], "motorSpace": "", "motorPlates": [], "cards": ["1678505222", "1678432870", "1678515046", "0114748056", "0293810735", "0182134593", "0187821617", "1334318261", "0365259892"], "note": "接入基礎資料", "fees": [{"month": "115-05", "amount": 5972.8, "status": "待核對"}]}, {"unit": "63-11F", "code": "A1-11", "aliases": ["63-11", "6311", "A1-11", "A111", "63號11樓"], "name": "黃許菊", "phone": "0926-881-886", "mobile": "0960-516-728\n0926-881-886", "emergencyContact": "(女)黃瀅萱\n(夫)黃文生", "carSpace": "", "cars": [], "motorSpace": "", "motorPlates": [], "cards": ["1678500982", "1678450230", "1678503158", "1013959621", "1032614981", "0444524886", "1185741125", "2646227061"], "note": "接入基礎資料", "fees": [{"month": "115-05", "amount": 5963, "status": "待核對"}]}], "vendors": [{"name": "永大電梯", "category": "電梯保養", "phone": "", "contact": "", "keywords": ["電梯", "鋼索", "換氣風扇", "皮帶輪", "異音"], "note": "AB棟電梯保養、檢修與鋼索年限追蹤"}, {"name": "國霖機電", "category": "消防機電", "phone": "", "contact": "", "keywords": ["消防", "機電", "燈具", "發電機", "廣播"], "note": "消防機電與弱電維護"}, {"name": "約暉實業", "category": "車道鐵門/遙控器", "phone": "2296-3929", "contact": "", "keywords": ["車道", "鐵門", "遙控器", "馬達", "電捲門", "柵欄"], "note": "車道大門馬達更換與維修窗口"}, {"name": "宗亞資訊", "category": "監視器/對講機", "phone": "", "contact": "", "keywords": ["監視器", "對講機", "弱電", "門禁"], "note": "監視器、對講機、弱電系統"}, {"name": "資訊星", "category": "監視器/對講機", "phone": "", "contact": "", "keywords": ["監視器", "對講機", "門禁", "資訊"], "note": "弱電資訊備援窗口"}, {"name": "泉安環保", "category": "資源回收", "phone": "2970-3252 / 0955-870-270", "contact": "", "keywords": ["資源回收", "回收", "玻璃", "紙類"], "note": "地址：三重泉州街96巷6號"}, {"name": "北環環保", "category": "舊衣回收", "phone": "8970-7227", "contact": "", "keywords": ["舊衣", "舊衣回收", "回收箱"], "note": "地址：樹林田尾街196-1號"}, {"name": "千造環保", "category": "垃圾清運", "phone": "2816-0336", "contact": "", "keywords": ["垃圾", "清運", "大型垃圾"], "note": "垃圾清運窗口"}, {"name": "金寶源", "category": "垃圾清運", "phone": "2992-6047", "contact": "", "keywords": ["垃圾", "清運", "大型垃圾"], "note": "垃圾清運備援"}, {"name": "玉山銀行", "category": "銀行/管理費代收", "phone": "", "contact": "", "keywords": ["管理費", "代收", "扣繳", "超商條碼", "銀行"], "note": "管理費銀行代收、扣繳與超商代收"}, {"name": "新莊區清潔隊", "category": "政府單位", "phone": "2201-9811 分機9 / 8952-0755", "contact": "", "keywords": ["清潔隊", "玻璃", "大型垃圾", "政府"], "note": "區公所清潔事項與回收洽詢"}], "todos": [], "repairs": [], "packages": [], "finance": [], "logs": []};
+var DB = null;
+function id(){ return 'id_' + Math.random().toString(36).slice(2) + '_' + Date.now().toString(36); }
+function $(x){ return document.getElementById(x); }
+function esc(v){ return String(v == null ? '' : v).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+function clone(x){ return JSON.parse(JSON.stringify(x || {})); }
+function now(){ return new Date().toLocaleString('zh-TW',{hour12:false}); }
+function arr(v){ if(Array.isArray(v)) return v.filter(Boolean).map(String); return String(v || '').split(/[、,，;；\n\r]+/).map(function(s){return s.trim();}).filter(Boolean); }
+function norm(s){ return String(s || '').toLowerCase().replace(/[\s\-＿_()（）號樓棟fＦ]/g,'').replace(/[０-９]/g,function(d){return String.fromCharCode(d.charCodeAt(0)-65248);}); }
+function unitAliases(unit, code){ var out=[]; [unit,code].forEach(function(u){ if(!u) return; out.push(u); var m=String(u).match(/(\d{2,3})\D*0?(\d{1,2})/); if(m){ var b=m[1], f=m[2]; out.push(b+'-'+f); out.push(b+'-'+('0'+f).slice(-2)); out.push(b+f); out.push(b+'號'+Number(f)+'樓'); } }); return out; }
+function firstVal(obj, keys){ for(var i=0;i<keys.length;i++){ var k=keys[i]; if(obj && obj[k]!=null && String(obj[k]).trim()!=='') return obj[k]; } return ''; }
+function collectVals(obj, keys){ var out=[]; keys.forEach(function(k){ if(obj && obj[k]!=null && String(obj[k]).trim()!=='') out=out.concat(arr(obj[k])); }); return unique(out); }
+function joinSpace(a,b){ return unique([].concat(arr(a),arr(b))).join('、'); }
+function normalizeResident(r){ r.unit = r.unit || firstVal(r,['戶別','戶號','門牌','住戶戶別','地址','unitNo','room','household','houseNo']); r.code = r.code || firstVal(r,['戶別代碼','代碼','棟別','棟別樓層','buildingCode','houseCode']); r.name = r.name || firstVal(r,['姓名','住戶姓名','所有權人','屋主','ownerName','owner','住戶']); r.ownerName = r.ownerName || r.owner || r['所有權人'] || r.name || ''; r.phone = r.phone || firstVal(r,['電話','聯絡電話','主要電話','住戶電話','tel']); r.mobile = r.mobile || firstVal(r,['手機','手機號碼','第二電話','mobile','cellphone']); r.emergencyContact = r.emergencyContact || firstVal(r,['緊急聯絡','緊急聯絡人','緊急聯絡電話','emergency','emergencyPhone']); r.tenantName = r.tenantName || r.renterName || r.tenant || r.renter || firstVal(r,['租客','租客姓名','承租人','承租戶','tenantName']); r.tenantPhone = r.tenantPhone || r.renterPhone || r.tenantMobile || r.tenantTel || firstVal(r,['租客電話','承租人電話','租客手機','tenantPhone']); r.tenantContact = r.tenantContact || r.tenantEmergency || r.tenantNote || firstVal(r,['租客聯絡資訊','租客聯絡人','租客備註','承租人備註','tenantContact']); r.carSpace = r.carSpace || firstVal(r,['汽車車位','汽車位','汽車停車位','車位','停車位','車格','carParking','parkingSpace','carParkNo','carLot']); r.cars = unique([].concat(arr(r.cars), collectVals(r,['car','cars','carNo','carNumber','carPlate','plate','plateNo','vehiclePlate','汽車車號','汽車車牌','車號','車牌','車輛車號']))); r.motorSpace = r.motorSpace || firstVal(r,['機車車位','機車位','機車停車位','機車格位','motorParking','motorSpace','motoSpace']); r.motorPlates = unique([].concat(arr(r.motorPlates), collectVals(r,['motorPlate','motorPlates','motorNo','motoPlate','motoNo','機車車號','機車車牌','機車號碼']))); r.cards = unique([].concat(arr(r.cards), collectVals(r,['card','cards','accessCard','accessCards','門禁卡','感應扣','卡號','門禁卡號']))); r.note = r.note || firstVal(r,['備註','管理備註','note','remark']); return r; }
+function ensureResidentFromRecord(d, rec){
+  var unit=firstVal(rec,['unit','戶別','戶號','門牌','住戶戶別','地址','unitNo','room','household']);
+  var code=firstVal(rec,['code','戶別代碼','代碼','棟別','棟別樓層']);
+  var name=firstVal(rec,['name','姓名','住戶姓名','所有權人','屋主','ownerName','owner']);
+  var keys=[norm(unit),norm(code),norm(name)].filter(Boolean);
+  if(!keys.length) return null;
+  var hit=d.residents.find(function(r){
+    var aliases=arr(r.aliases).map(norm);
+    return keys.some(function(k){ return norm(r.unit)===k || norm(r.code)===k || norm(r.name)===k || norm(r.ownerName)===k || aliases.indexOf(k)>=0; });
+  });
+  if(!hit){ hit={id:id(),unit:unit,code:code,name:name,ownerName:name,aliases:[],fees:[],note:'車位/車號資料自動建立'}; d.residents.push(hit); }
+  return hit;
+}
+function absorbVehicleTables(d){
+  var lists=[];
+  ['vehicles','vehicleRecords','carsTable','carRecords','parking','parkings','carData','motorData','carList','motorList','車輛資料','車牌資料','車位資料','停車位資料','汽車資料','機車資料'].forEach(function(k){ if(Array.isArray(d[k])) lists=lists.concat(d[k]); });
+  lists.forEach(function(x){
+    if(!x || typeof x!=='object') return;
+    var r=ensureResidentFromRecord(d,x);
+    if(!r) return;
+    var kind=String(firstVal(x,['type','類型','車種','vehicleType','kind','備註']));
+    var motorSpace=firstVal(x,['motorSpace','機車車位','機車位','機車停車位','motoSpace']);
+    var motorPlate=collectVals(x,['motorPlate','motorPlates','motorNo','motoPlate','motoNo','機車車牌','機車車號','機車號碼']);
+    var isMotor=/機車|motor|moto|scooter/.test(kind) || !!motorSpace || motorPlate.length>0;
+    var space=firstVal(x,isMotor?['motorSpace','機車車位','機車位','機車停車位','parkingSpace','車位','位置']:['carSpace','汽車車位','汽車位','汽車停車位','parkingSpace','車位','位置']);
+    var plate=collectVals(x,isMotor?['motorPlate','motorPlates','motorNo','motoPlate','motoNo','機車車牌','機車車號','機車號碼','plate','plateNo','車牌','車號']:['cars','car','carPlate','carNo','carNumber','plate','plateNo','vehiclePlate','汽車車牌','汽車車號','車牌','車號']);
+    if(isMotor){ r.motorSpace=joinSpace(r.motorSpace,space); r.motorPlates=unique([].concat(arr(r.motorPlates),plate)); }
+    else { r.carSpace=joinSpace(r.carSpace,space); r.cars=unique([].concat(arr(r.cars),plate)); }
+  });
+}
+function parseCSVRows(txt){ var rows=[], row=[], cell='', inQ=false; txt=String(txt||''); for(var i=0;i<txt.length;i++){ var ch=txt[i]; if(ch==='"'){ if(inQ && txt[i+1]==='"'){ cell+='"'; i++; } else inQ=!inQ; } else if(ch===',' && !inQ){ row.push(cell); cell=''; } else if(ch==='\n' && !inQ){ row.push(cell); rows.push(row); row=[]; cell=''; } else if(ch==='\r'){ } else { cell+=ch; } } row.push(cell); rows.push(row); return rows.filter(function(r){ return r.some(function(c){ return String(c||'').trim()!==''; }); }); }
+function baseDB(){ var d=clone(SEED); ['residents','vendors','todos','repairs','packages','finance','logs'].forEach(function(k){ if(!Array.isArray(d[k])) d[k]=[]; }); d.meta={community:'上尊爵社區',version:APP_VERSION,updatedAt:new Date().toISOString()}; return finalize(d); }
+function finalize(d){
+  if(!d || typeof d !== 'object') d={};
+  if(!Array.isArray(d.residents)) d.residents = d.residentList || d.households || d.householdList || d.people || d['住戶資料'] || d['住戶'] || d['住戶名冊'] || [];
+  if(!Array.isArray(d.vendors)) d.vendors = d.vendorList || d.contractors || d['廠商資料'] || d['廠商'] || [];
+  ['todos','repairs','packages','finance','logs'].forEach(function(k){ if(!Array.isArray(d[k])) d[k]=[]; });
+  absorbVehicleTables(d);
+  d.residents = d.residents.filter(function(r){ return r && typeof r==='object'; });
+  d.residents.forEach(function(r){ if(!r.id) r.id=id(); normalizeResident(r); r.aliases=unique([].concat(arr(r.aliases), unitAliases(r.unit,r.code))); r.fees=Array.isArray(r.fees)?r.fees:[]; });
+  d.residents = dedupeResidents(d.residents);
+  d.vendors = d.vendors.filter(function(v){ return v && typeof v==='object'; });
+  d.vendors.forEach(function(v){ if(!v.id) v.id=id(); v.keywords=arr(v.keywords); });
+  d.vendors = dedupeVendors(d.vendors);
+  d.meta=d.meta||{}; d.meta.version=APP_VERSION; d.meta.updatedAt=new Date().toISOString();
+  return d;
+}
+function dedupeResidents(list){
+  var out=[];
+  list.forEach(function(r){
+    normalizeResident(r);
+    var keys=unique([r.unit,r.code,r.name,r.ownerName].concat(arr(r.aliases))).map(norm).filter(Boolean);
+    var hit=out.find(function(o){ var ok=unique([o.unit,o.code,o.name,o.ownerName].concat(arr(o.aliases))).map(norm); return keys.some(function(k){return ok.indexOf(k)>=0;}); });
+    if(hit) mergeResident(hit,r); else out.push(r);
+  });
+  return out;
+}
+function dedupeVendors(list){
+  var out=[];
+  list.forEach(function(v){ var key=norm(v.name); if(!key) return; var hit=out.find(function(o){return norm(o.name)===key;}); if(hit) mergeVendor(hit,v); else out.push(v); });
+  return out;
+}
+function unique(a){ var seen={}, out=[]; a.forEach(function(x){ x=String(x||'').trim(); if(x && !seen[x]){ seen[x]=1; out.push(x); } }); return out; }
+function save(){
+  try{
+    if(!DB) return false;
+    DB.meta = DB.meta || {};
+    DB.meta.version = APP_VERSION;
+    DB.meta.updatedAt = new Date().toISOString();
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(DB));
+    return true;
+  }catch(e){
+    var el=$('systemMsg');
+    if(el){ el.className='error'; el.textContent='資料儲存失敗：'+(e && e.message ? e.message : e); }
+    return false;
+  }
+}
+function load(){
+  try{
+    var raw=localStorage.getItem(STORAGE_KEY);
+    if(raw) return finalize(JSON.parse(raw));
+  }catch(e){
+    try{ localStorage.setItem(STORAGE_KEY+'_broken_'+Date.now(), localStorage.getItem(STORAGE_KEY)||''); }catch(_e){}
+  }
+  var d=baseDB();
+  connectLegacy(d);
+  finalize(d);
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(d)); }catch(e){}
+  return d;
+}
+function mergeResident(dst, src){ normalizeResident(src); normalizeResident(dst); ['unit','code','name','ownerName','phone','mobile','emergencyContact','tenantName','tenantPhone','tenantContact','note'].forEach(function(k){ if(!dst[k] && src[k]) dst[k]=src[k]; }); dst.carSpace=joinSpace(dst.carSpace, src.carSpace); dst.motorSpace=joinSpace(dst.motorSpace, src.motorSpace); dst.aliases=unique([].concat(arr(dst.aliases), arr(src.aliases), unitAliases(src.unit,src.code))); dst.cars=unique([].concat(arr(dst.cars), arr(src.cars))); dst.cards=unique([].concat(arr(dst.cards), arr(src.cards))); dst.motorPlates=unique([].concat(arr(dst.motorPlates), arr(src.motorPlates))); dst.fees=mergeFees(dst.fees, src.fees); }
+function mergeFees(a,b){ var m={}; (Array.isArray(a)?a:[]).concat(Array.isArray(b)?b:[]).forEach(function(f){ var key=String(f.month||''); if(key) m[key]=Object.assign({}, m[key]||{}, f); }); return Object.keys(m).map(function(k){return m[k];}); }
+function mergeVendor(dst, src){ ['name','category','phone','contact','note'].forEach(function(k){ if(!dst[k] && src[k]) dst[k]=src[k]; }); dst.keywords=unique([].concat(arr(dst.keywords), arr(src.keywords))); }
+function connectData(target, source){
+  source=finalize(clone(source));
+  var addedR=0, addedV=0, updR=0, updV=0;
+  source.residents.forEach(function(s){
+    normalizeResident(s);
+    var keys=unique([s.unit,s.code,s.name,s.ownerName].concat(arr(s.aliases))).map(norm).filter(Boolean);
+    if(!keys.length) return;
+    var hit=target.residents.find(function(r){ var rk=unique([r.unit,r.code,r.name,r.ownerName].concat(arr(r.aliases))).map(norm); return keys.some(function(k){return rk.indexOf(k)>=0;}); });
+    if(hit){ mergeResident(hit,s); updR++; } else { s.id=s.id||id(); target.residents.push(s); addedR++; }
+  });
+  source.vendors.forEach(function(s){
+    var key=norm(s.name); if(!key) return;
+    var hit=target.vendors.find(function(v){ return norm(v.name)===key; });
+    if(hit){ mergeVendor(hit,s); updV++; } else { s.id=s.id||id(); target.vendors.push(s); addedV++; }
+  });
+  finalize(target);
+  return {addedR:addedR,addedV:addedV,updR:updR,updV:updV};
+}
+function connectLegacy(target){
+  LEGACY_KEYS.forEach(function(k){
+    if(k===STORAGE_KEY) return;
+    try{ var raw=localStorage.getItem(k); if(!raw) return; var old=JSON.parse(raw); connectData(target, old); }
+    catch(e){ try{ console.warn('略過舊版資料：'+k, e); }catch(_e){} }
+  });
+  return target;
+}
+function log(a,d){ DB.logs.unshift({id:id(),time:now(),action:a,detail:d||''}); DB.logs=DB.logs.slice(0,80); }
+function textResident(r){ return [r.unit,r.code,r.name,r.ownerName,r.phone,r.mobile,r.emergencyContact,r.tenantName,r.tenantPhone,r.tenantContact,r.carSpace,r.motorSpace,r.note].concat(arr(r.aliases),arr(r.cars),arr(r.cards),arr(r.motorPlates)).join(' '); }
+function textVendor(v){ return [v.name,v.category,v.phone,v.contact,v.note].concat(arr(v.keywords)).join(' '); }
+function match(text,q){
+  var qq=String(q||'').trim();
+  if(!qq) return true;
+  var raw=String(text||'').toLowerCase();
+  var nq=norm(qq);
+  var ntext=norm(text);
+  var compactPlate=function(s){ return String(s||'').toLowerCase().replace(/[^0-9a-z\u4e00-\u9fff]/g,''); };
+  return raw.indexOf(qq.toLowerCase())>=0 || ntext.indexOf(nq)>=0 || compactPlate(text).indexOf(compactPlate(qq))>=0;
+}
+function allFinance(){ var rows=[].concat(DB.finance||[]); DB.residents.forEach(function(r){ (r.fees||[]).forEach(function(f){ rows.push(Object.assign({unit:r.unit,name:r.name}, f)); }); }); return rows; }
+function resultCard(type,title,meta,extra){ return '<div class="item"><span class="tag">'+esc(type)+'</span><b>'+esc(title)+'</b><div class="muted">'+esc(meta||'')+'</div>'+(extra?'<div>'+extra+'</div>':'')+'</div>'; }
+function renderKPIs(){ $('kpis').innerHTML='<div class="kpi">住戶資料<b>'+DB.residents.length+'</b></div><div class="kpi">廠商資料<b>'+DB.vendors.length+'</b></div><div class="kpi">代辦事項<b>'+DB.todos.length+'</b></div><div class="kpi">財務筆數<b>'+allFinance().length+'</b></div>'; $('recentLog').innerHTML=DB.logs.length?DB.logs.slice(0,8).map(function(l){return resultCard(l.action,l.time,l.detail);}).join(''):'尚無紀錄。'; $('versionTag').textContent=APP_VERSION; }
+function fieldVal(v){ return v ? esc(v) : '<span class="emptyField">未登錄</span>'; }
+function residentExtra(r, editable){ var tenant=(r.tenantName||r.tenantPhone||r.tenantContact) ? '<div><b>租客：</b>'+fieldVal(r.tenantName)+'｜<b>租客電話：</b>'+fieldVal(r.tenantPhone)+'｜<b>租客聯絡：</b>'+fieldVal(r.tenantContact)+'</div>' : '<div><b>租客：</b><span class="emptyField">未登錄租客資料</span></div>'; var html='<div class="residentMeta muted"><div><b>戶別代碼：</b>'+fieldVal(r.code)+'</div><div><b>所有權人/住戶：</b>'+fieldVal(r.name || r.ownerName)+'｜<b>電話：</b>'+fieldVal(r.phone)+'｜<b>手機：</b>'+fieldVal(r.mobile)+'</div>'+tenant+'<div><b>緊急聯絡：</b>'+fieldVal(r.emergencyContact)+'</div><div><b>汽車：</b>'+fieldVal(r.carSpace)+'｜<b>車號：</b>'+fieldVal(arr(r.cars).join('、'))+'</div><div><b>機車：</b>'+fieldVal(r.motorSpace)+'｜<b>機車車號：</b>'+fieldVal(arr(r.motorPlates).join('、'))+'</div><div><b>門禁卡：</b>'+fieldVal(arr(r.cards).join('、'))+'</div><div><b>備註：</b>'+fieldVal(r.note)+'</div></div>'; if(editable!==false) html += '<div class="actions"><button class="alt miniBtn editResidentBtn" data-id="'+esc(r.id)+'">修正資料</button></div>'; return html; }
+function search(q){ var out=[]; DB.residents.forEach(function(r){ if(match(textResident(r),q)) out.push(resultCard('住戶', (r.unit||'')+' '+(r.name||r.ownerName||''), '含所有權人、租客、電話、車牌、門禁卡資料', residentExtra(r,true))); }); DB.vendors.forEach(function(v){ if(match(textVendor(v),q)) out.push(resultCard('廠商', v.name, (v.category||'')+'｜'+(v.phone||'')+'｜'+(v.note||''))); }); allFinance().forEach(function(f){ if(match(JSON.stringify(f),q)) out.push(resultCard('財務', (f.unit||'')+' '+(f.month||''), '金額：'+(f.amount||'')+'｜狀態：'+(f.status||''))); }); DB.todos.forEach(function(t){ if(match(JSON.stringify(t),q)) out.push(resultCard('代辦', t.text, (t.assignee||'')+'｜'+(t.priority||'')+'｜'+(t.status||''))); }); DB.repairs.forEach(function(r){ if(match(JSON.stringify(r),q)) out.push(resultCard('維修', r.issue, (r.location||'')+'｜'+(r.vendor||'')+'｜'+(r.status||''))); }); return out; }
+function runSearch(){
+  var q=$('globalQ').value.trim();
+  if(!q){ $('searchResults').innerHTML='<div class="item muted">請輸入戶別、姓名、租客、電話、車牌、卡號或廠商關鍵字。</div>'; return; }
+  var rows=search(q).slice(0,80);
+  $('searchResults').innerHTML=rows.length?rows.join(''):'<div class="item muted">查無資料，請換戶別、姓名、租客、電話、車牌、卡號或廠商關鍵字。</div>';
+}
+function renderResidents(){
+  var q=$('residentQ').value||'';
+  var rows=DB.residents.filter(function(r){return match(textResident(r),q);}).slice(0,120).map(function(r){ return resultCard('住戶', (r.unit||'')+' '+(r.name||r.ownerName||''), '住戶/租客聯絡資訊', residentExtra(r,true)); });
+  $('residentList').innerHTML=rows.length?rows.join(''):'<div class="item muted">沒有住戶資料。</div>';
+}
+function findResidentById(rid){ return DB.residents.find(function(r){ return String(r.id)===String(rid); }); }
+function openResidentEditor(rid){ var r=findResidentById(rid); if(!r) return alert('找不到這筆住戶資料'); $('residentEditor').style.display='block'; $('residentEditTitle').textContent=(r.unit||'')+' '+(r.name||r.ownerName||''); $('editResidentId').value=r.id; $('editUnit').value=r.unit||''; $('editCode').value=r.code||''; $('editName').value=r.name||r.ownerName||''; $('editPhone').value=r.phone||''; $('editMobile').value=r.mobile||''; $('editEmergency').value=r.emergencyContact||''; $('editTenantName').value=r.tenantName||''; $('editTenantPhone').value=r.tenantPhone||''; $('editTenantContact').value=r.tenantContact||''; $('editCarSpace').value=r.carSpace||''; $('editCars').value=arr(r.cars).join('、'); $('editMotorSpace').value=r.motorSpace||''; $('editMotorPlates').value=arr(r.motorPlates).join('、'); $('editCards').value=arr(r.cards).join('、'); $('editNote').value=r.note||''; $('residentEditor').scrollIntoView({behavior:'smooth',block:'start'}); }
+function closeResidentEditor(){ $('residentEditor').style.display='none'; $('editResidentId').value=''; }
+function saveResidentEdit(){ var r=findResidentById($('editResidentId').value); if(!r) return alert('請先選取住戶資料'); r.unit=$('editUnit').value.trim(); r.code=$('editCode').value.trim(); r.name=$('editName').value.trim(); r.ownerName=r.name; r.phone=$('editPhone').value.trim(); r.mobile=$('editMobile').value.trim(); r.emergencyContact=$('editEmergency').value.trim(); r.tenantName=$('editTenantName').value.trim(); r.tenantPhone=$('editTenantPhone').value.trim(); r.tenantContact=$('editTenantContact').value.trim(); r.carSpace=$('editCarSpace').value.trim(); r.cars=arr($('editCars').value); r.motorSpace=$('editMotorSpace').value.trim(); r.motorPlates=arr($('editMotorPlates').value); r.cards=arr($('editCards').value); r.note=$('editNote').value.trim(); r.aliases=unique([].concat(arr(r.aliases), unitAliases(r.unit,r.code))); log('修正住戶資料',(r.unit||'')+' '+(r.name||'')); save(); renderAll(); closeResidentEditor(); $('systemMsg').className='ok'; $('systemMsg').textContent='已儲存住戶資料修正：'+(r.unit||'')+' '+(r.name||''); }
+function renderVendors(){ var q=$('vendorQ').value||''; var rows=DB.vendors.filter(function(v){return match(textVendor(v),q);}).map(function(v){ return resultCard('廠商', v.name, (v.category||'')+'｜電話：'+(v.phone||'')+'｜關鍵字：'+arr(v.keywords).join('、')+'｜'+(v.note||'')); }); $('vendorList').innerHTML=rows.length?rows.join(''):'<div class="item muted">沒有廠商資料。</div>'; }
+function renderTodos(){ $('todoList').innerHTML=DB.todos.length?DB.todos.map(function(t){ return resultCard('代辦 '+(t.status||'未完成'),t.text,(t.assignee||'')+'｜'+(t.priority||'')+'｜'+(t.createdAt||'')); }).join(''):'<div class="item muted">尚無代辦。</div>'; }
+function renderFinance(){ var rows=allFinance(); $('financeList').innerHTML=rows.length?'<div class="tableWrap"><table><thead><tr><th>戶別</th><th>姓名</th><th>月份</th><th>金額</th><th>狀態</th></tr></thead><tbody>'+rows.map(function(f){return '<tr><td>'+esc(f.unit)+'</td><td>'+esc(f.name||'')+'</td><td>'+esc(f.month||'')+'</td><td>'+esc(f.amount||'')+'</td><td>'+esc(f.status||'')+'</td></tr>';}).join('')+'</tbody></table></div>':'<div class="item muted">尚無財務資料。</div>'; }
+function renderAll(){
+  try{ renderKPIs(); }catch(e){console.warn(e);}
+  try{ renderResidents(); }catch(e){console.warn(e);}
+  try{ renderVendors(); }catch(e){console.warn(e);}
+  try{ renderTodos(); }catch(e){console.warn(e);}
+  try{ renderFinance(); }catch(e){console.warn(e);}
+  var info=$('backupInfo'); if(info) info.textContent='目前資料：住戶 '+DB.residents.length+' 筆、廠商 '+DB.vendors.length+' 筆、財務 '+allFinance().length+' 筆。';
+}
+function switchPage(page){ document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');}); document.querySelectorAll('.nav button').forEach(function(b){b.classList.toggle('active', b.getAttribute('data-page')===page);}); var target=$(page); if(target) target.classList.add('active'); }
+function analyzeAI(){ var t=$('aiText').value.trim(); if(!t){ $('aiResult').innerHTML='請先輸入指令。'; return; } var type='代辦'; if(/維修|故障|異常|壞|檢修|漏水|電梯|鐵門|車道/.test(t)) type='維修'; if(/包裹|掛號|貨到|宅配/.test(t)) type='包裹'; if(/公告|通知|住戶群/.test(t)) type='公告'; var vendor=''; DB.vendors.forEach(function(v){ if(!vendor && match(textVendor(v),t)) vendor=v.name; }); if(type==='維修') DB.repairs.unshift({id:id(),issue:t,location:'待補',vendor:vendor,status:'待處理',createdAt:now()}); else DB.todos.unshift({id:id(),text:t,assignee:'管理中心',priority:type==='公告'?'高':'一般',status:'未完成',createdAt:now()}); log('AI建立'+type,t); save(); renderAll(); $('aiResult').innerHTML=resultCard(type,'已建立紀錄','建議廠商：'+(vendor||'待判斷')+'｜時間：'+now()); }
+function chairReport(){ var t=$('aiText').value.trim()||'待補事項'; var msg='主委您好，以下事項回報：\n1. 事項：'+t+'\n2. 目前狀態：已由系統建立追蹤紀錄。\n3. 後續處理：管理中心持續追蹤並回報進度。'; $('aiResult').innerHTML='<div class="item"><b>主委回報稿</b><div class="muted" style="white-space:pre-wrap">'+esc(msg)+'</div></div>'; }
+function connectNow(){
+  var res=connectData(DB, SEED);
+  connectLegacy(DB);
+  var before=DB.residents.length+' / '+DB.vendors.length;
+  finalize(DB);
+  log('接資料進這版','住戶新增 '+res.addedR+'，廠商新增 '+res.addedV+'，更新住戶 '+res.updR+'，更新廠商 '+res.updV);
+  save(); renderAll();
+  $('systemMsg').className='ok';
+  $('systemMsg').textContent='資料已接入目前版本。住戶 '+DB.residents.length+' 筆，廠商 '+DB.vendors.length+' 筆。原始接入後去重前：'+before+'。';
+}
+function exportJSON(){ var blob=new Blob([JSON.stringify(DB,null,2)],{type:'application/json;charset=utf-8'}); download(blob,'上尊爵社區_AI管理系統_v29_資料備份.json'); }
+function csvEscape(s){ s=String(s==null?'':s); return /[",\n]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s; }
+function exportCSV(){ var rows=[['類別','戶別/名稱','戶別代碼','姓名/分類','電話','手機','緊急聯絡','租客姓名','租客電話','租客聯絡資訊','汽車車位','汽車車號','機車車位','機車車號','門禁卡','備註']]; DB.residents.forEach(function(r){ rows.push(['住戶',r.unit,r.code,r.name||r.ownerName,r.phone,r.mobile,r.emergencyContact,r.tenantName,r.tenantPhone,r.tenantContact,r.carSpace,arr(r.cars).join('、'),r.motorSpace,arr(r.motorPlates).join('、'),arr(r.cards).join('、'),r.note]); }); DB.vendors.forEach(function(v){ rows.push(['廠商',v.name,'',v.category,v.phone,v.contact,'','','','', '', arr(v.keywords).join('、'), '', '', '', v.note]); }); var csv=rows.map(function(r){ return r.map(csvEscape).join(','); }).join('\n'); download(new Blob([csv],{type:'text/csv;charset=utf-8'}),'上尊爵社區_AI管理系統_v29_住戶車位車號總表.csv'); }
+function download(blob,name){ var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; a.click(); setTimeout(function(){URL.revokeObjectURL(a.href);},1000); }
+function importText(txt){ txt=String(txt||'').trim(); if(!txt) return; try{ var obj=JSON.parse(txt); connectData(DB,obj); log('匯入JSON','已匯入貼上資料'); save(); renderAll(); return; }catch(e){} var rows=parseCSVRows(txt); if(!rows.length) return; var header=rows[0].map(function(x){return norm(x);}); function col(c,names,idx){ for(var i=0;i<names.length;i++){ var p=header.indexOf(norm(names[i])); if(p>=0 && c[p]!=null) return String(c[p]).trim(); } return c[idx] ? String(c[idx]).trim() : ''; } rows.slice(1).forEach(function(c){ var type=norm(col(c,['type','類別'],0)); if(type.indexOf('廠商')>=0 || col(c,['vendor','廠商'],16)){ DB.vendors.push({id:id(),name:col(c,['vendor','廠商','戶別/名稱','name'],16)||col(c,['name','名稱'],1),category:col(c,['category','分類','姓名/分類'],3),phone:col(c,['phone','電話'],4),contact:col(c,['contact','聯絡人','手機'],5),keywords:arr(col(c,['keywords','關鍵字','車號/關鍵字'],11)),note:col(c,['note','備註'],15)||'CSV匯入'}); } else { DB.residents.push({id:id(),unit:col(c,['unit','戶別','戶號','戶別/名稱'],1),code:col(c,['code','戶別代碼','代碼'],2),name:col(c,['name','姓名','所有權人','姓名/分類'],3),phone:col(c,['phone','電話'],4),mobile:col(c,['mobile','手機'],5),emergencyContact:col(c,['emergencyContact','緊急聯絡','緊急聯絡人'],6),tenantName:col(c,['tenantName','租客姓名','租客','承租人'],7),tenantPhone:col(c,['tenantPhone','租客電話','承租人電話'],8),tenantContact:col(c,['tenantContact','租客聯絡資訊','租客聯絡人','租客備註'],9),carSpace:col(c,['carSpace','汽車車位','汽車位','車位','停車位'],10),cars:arr(col(c,['cars','car','汽車車號','汽車車牌','車號','車牌','車號/關鍵字'],11)),motorSpace:col(c,['motorSpace','機車車位','機車位','機車停車位'],12),motorPlates:arr(col(c,['motorPlates','motorPlate','機車車號','機車車牌','機車號碼'],13)),cards:arr(col(c,['cards','card','門禁卡','感應扣','卡號'],14)),aliases:[],fees:[],note:col(c,['note','備註'],15)||'CSV匯入'}); } }); finalize(DB); log('匯入CSV','匯入 '+Math.max(0,rows.length-1)+' 列'); save(); renderAll(); }
+
+function healthCheck(){
+  var beforeR=DB.residents.length, beforeV=DB.vendors.length;
+  finalize(DB);
+  DB.residents.forEach(function(r){
+    r.aliases=unique([].concat(arr(r.aliases),unitAliases(r.unit,r.code)));
+    r.cars=unique(arr(r.cars)); r.motorPlates=unique(arr(r.motorPlates)); r.cards=unique(arr(r.cards));
+  });
+  DB.vendors.forEach(function(v){ v.keywords=unique(arr(v.keywords)); });
+  log('資料健檢/修復','住戶 '+beforeR+'→'+DB.residents.length+'，廠商 '+beforeV+'→'+DB.vendors.length+'；已重整車位、車牌、門禁卡與別名。');
+  save(); renderAll();
+  $('systemMsg').className='ok';
+  $('systemMsg').textContent='資料健檢完成：住戶 '+beforeR+'→'+DB.residents.length+'，廠商 '+beforeV+'→'+DB.vendors.length+'。';
+}
+
+function resetBase(){ if(!confirm('確定重設為 v29 基礎資料？')) return; DB=baseDB(); save(); renderAll(); }
+function addTodo(){ var text=$('todoText').value.trim(); if(!text) return alert('請輸入代辦事項'); DB.todos.unshift({id:id(),text:text,assignee:$('todoAssignee').value.trim()||'管理中心',priority:$('todoPri').value,status:'未完成',createdAt:now()}); $('todoText').value=''; log('新增代辦',text); save(); renderAll(); }
+function printResidents(){ var rows=DB.residents.map(function(r){return '<tr><td>'+esc(r.unit)+'</td><td>'+esc(r.code)+'</td><td>'+esc(r.name||r.ownerName)+'</td><td>'+esc(r.phone)+'</td><td>'+esc(r.mobile)+'</td><td>'+esc(r.emergencyContact)+'</td><td>'+esc(r.tenantName)+'</td><td>'+esc(r.tenantPhone)+'</td><td>'+esc(r.tenantContact)+'</td><td>'+esc(r.carSpace)+'</td><td>'+esc(arr(r.cars).join('、'))+'</td><td>'+esc(r.motorSpace)+'</td><td>'+esc(arr(r.motorPlates).join('、'))+'</td><td>'+esc(arr(r.cards).join('、'))+'</td><td>'+esc(r.note)+'</td></tr>';}).join(''); var html='<!doctype html><html><head><meta charset="utf-8"><title>住戶名冊</title><style>body{font-family:"Microsoft JhengHei",Arial;padding:20px}table{width:100%;border-collapse:collapse}td,th{border:1px solid #555;padding:6px;font-size:12px}h1{text-align:center}</style></head><body><h1>上尊爵社區住戶名冊</h1><table><thead><tr><th>戶別</th><th>代碼</th><th>姓名</th><th>電話</th><th>手機</th><th>緊急聯絡</th><th>租客姓名</th><th>租客電話</th><th>租客聯絡資訊</th><th>汽車車位</th><th>汽車車號</th><th>機車車位</th><th>機車車號</th><th>門禁卡</th><th>備註</th></tr></thead><tbody>'+rows+'</tbody></table></body></html>'; var blob=new Blob([html],{type:'text/html;charset=utf-8'}); download(blob,'上尊爵社區_住戶名冊_v29_含車位車號.html'); }
+
+var deferredInstallPrompt = null;
+window.addEventListener('beforeinstallprompt', function(e){
+  try{ e.preventDefault(); deferredInstallPrompt = e; updateInstallStatus(); }catch(_e){}
+});
+window.addEventListener('appinstalled', function(){
+  deferredInstallPrompt = null;
+  updateInstallStatus('已安裝完成。之後請從手機主畫面的「上尊爵AI」開啟。');
+});
+function isStandaloneMode(){
+  return (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
+}
+function updateInstallStatus(extra){
+  var el=$('installStatusBody'); if(!el) return;
+  var proto=location.protocol || '';
+  var standalone=isStandaloneMode();
+  var secure=(proto==='https:' || location.hostname==='localhost' || location.hostname==='127.0.0.1');
+  var lines=[];
+  var dot='dot';
+  if(standalone){ lines.push('✅ 目前已用手機主畫面 App 模式開啟。'); }
+  else if(proto==='file:'){ dot='dot warn'; lines.push('⚠️ 目前是檔案模式 file://。'); lines.push('可操作，但「加入主畫面」常會變成暫存捷徑，第二次可能找不到。'); }
+  else if(!secure){ dot='dot warn'; lines.push('⚠️ 目前不是 HTTPS，PWA 安裝與離線啟動可能不穩。'); }
+  else { lines.push('✅ 目前是可安裝環境。可用瀏覽器功能加入手機主畫面。'); }
+  lines.push('目前位置：'+(location.href||'本機檔案'));
+  if(deferredInstallPrompt) lines.push('✅ 瀏覽器已提供安裝事件，可按「安裝/加入主畫面」。');
+  else lines.push('提示：若按鈕無反應，請用瀏覽器選單「加入主畫面」。iPhone 請用 Safari 分享按鈕加入。');
+  if(extra) lines.push(extra);
+  el.innerHTML='<span class="'+dot+'"></span>'+esc(lines.join('\n'));
+}
+function installApp(){
+  updateInstallStatus();
+  if(deferredInstallPrompt){
+    deferredInstallPrompt.prompt();
+    deferredInstallPrompt.userChoice.then(function(){ deferredInstallPrompt=null; updateInstallStatus(); }).catch(function(){ updateInstallStatus(); });
+    return;
+  }
+  var note=$('installNote'); if(note) note.style.display='block';
+  alert('請用瀏覽器選單加入主畫面：Android 用 Chrome/Edge 右上角選單；iPhone 用 Safari 分享 → 加入主畫面。若目前從檔案開啟，建議改放固定網址再安裝。');
+}
+function copyInstallNote(){
+  var msg='上尊爵AI手機主畫面安裝提醒：請勿從 ChatGPT 預覽或一次性下載頁直接加入主畫面。建議把 v29 放到固定 HTTPS 網址後，用 Chrome/Edge/Safari 開啟，再加入主畫面；若只能用檔案，請先存到手機下載資料夾後再開啟。';
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(msg).then(function(){ alert('已複製安裝提醒'); }).catch(function(){ alert(msg); }); }
+  else alert(msg);
+}
+
+function bind(){
+  function on(id, ev, fn){ var el=$(id); if(el) el.addEventListener(ev,fn); }
+  document.querySelectorAll('[data-page]').forEach(function(b){ b.addEventListener('click',function(){ switchPage(b.getAttribute('data-page')); }); });
+  document.addEventListener('click',function(e){ var btn=e.target.closest ? e.target.closest('.editResidentBtn') : null; if(btn){ openResidentEditor(btn.getAttribute('data-id')); } });
+  on('btnSearch','click',runSearch);
+  on('btnInstallApp','click',installApp);
+  on('btnInstallCheck','click',function(){ updateInstallStatus(); });
+  on('btnCopyInstallNote','click',copyInstallNote);
+  on('globalQ','keydown',function(e){ if(e.key==='Enter') runSearch(); });
+  document.querySelectorAll('.quickQ').forEach(function(b){ b.addEventListener('click',function(){ $('globalQ').value=b.getAttribute('data-q'); runSearch(); }); });
+  var residentTimer=null;
+  on('residentQ','input',function(){ clearTimeout(residentTimer); residentTimer=setTimeout(renderResidents,120); });
+  on('vendorQ','input',renderVendors);
+  on('btnSaveResident','click',saveResidentEdit);
+  on('btnCancelResidentEdit','click',closeResidentEditor);
+  on('btnAI','click',analyzeAI);
+  on('btnChair','click',chairReport);
+  on('btnConnect','click',connectNow);
+  on('btnConnect2','click',connectNow);
+  on('btnHealth','click',healthCheck);
+  on('btnExport','click',exportJSON);
+  on('btnExportCSV','click',exportCSV);
+  on('btnReset','click',resetBase);
+  on('btnImport','click',function(){ importText($('importText').value); });
+  on('btnTodo','click',addTodo);
+  on('btnPrintResidents','click',printResidents);
+  on('fileImport','change',function(e){ var f=e.target.files[0]; if(!f) return; var r=new FileReader(); r.onload=function(){ importText(r.result); e.target.value=''; }; r.readAsText(f,'utf-8'); });
+}
+function boot(){
+  try{
+    DB=load();
+    bind();
+    renderAll();
+    $('bootBadge').textContent='v29 主畫面修正版｜畫面正常';
+    $('systemMsg').className='ok';
+    $('systemMsg').textContent='系統已正常啟動。v29 已加入手機主畫面啟動檢查、安裝提示、PWA 標籤與舊版資料接入。';
+    updateInstallStatus();
+  }catch(e){
+    var el=$('systemMsg');
+    if(el){ el.className='error'; el.textContent='系統啟動錯誤：'+(e && e.message ? e.message : e); }
+    try{ console.error(e); }catch(_e){}
+  }
+}
+if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',boot); else boot();
+})();
+</script>
+</body>
+</html>
